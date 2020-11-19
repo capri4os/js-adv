@@ -21,13 +21,12 @@ class goodsList {
 
     render() {
         const mainList = ''
-        this.items.forEach(goodItem => {
-            const item = new goodItem(good.title, good.price)
+        this.items.forEach(() => {
+            const item = new goodItem(goodItem.name, goodItem.price)
             mainList += goodItem.render()
         })
         document.querySelector('.goods').innerHTML = mainList
     }
-
 }
 
 class goodItem {
@@ -55,9 +54,16 @@ class goodItem {
         }
     }
 
-    buy() {
+    add() {
+        const choseItems = document.getElementsByClassName('.goods-item')
+        for (var i = 0; i < choseItems.length; i++) {
+            choseItems[i].onclick = moveToCart
+        }
 
+        // moveToCart(eventObj) {
+        //     //перемещение в корзину
 
+        // }
     }
 }
 
@@ -91,3 +97,7 @@ class Cart {
 
 //     }
 // }
+
+const list = new goodsList();
+list.fetchGoods();
+list.render();
