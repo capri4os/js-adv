@@ -17,26 +17,32 @@ body {
     padding-top: 50px;
 }
 
-.goods {
-    margin-top: 30px;
-}
-
 .goods-heading {
     font-size: 24px;
+    padding-top: 20px;
+}
+
+.goods {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;    
 }
 
 .goods-item {
-
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
 }
 
 .goods-item-button {
 
 }
 
-.cart {
-    margin-top: 30px;
-}
-
 .cart-heading {
     font-size: 24px;
+    padding-top: 20px;
+}
+
+.cart {
+    margin-top: 30px;
 }
