@@ -25,17 +25,24 @@ body {
 .goods {
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;    
+    flex-wrap: wrap;
 }
 
 .goods-item {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 220px;
     border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.goods-item-text {
+    padding-top: 10px;
 }
 
 .goods-item-button {
-
+    margin: 5px;
+    text-align: center;
 }
 
 .cart-heading {
@@ -45,4 +52,9 @@ body {
 
 .cart {
     margin-top: 30px;
+}
+
+.btn {
+    padding: 2px;
+    
 }

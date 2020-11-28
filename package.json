@@ -2,7 +2,7 @@
   "name": "js-adv",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "shop2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/capri4os/js-adv.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "capri4os",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/capri4os/js-adv/issues"
