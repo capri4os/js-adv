@@ -36,10 +36,11 @@ class List {
 
 class ProductList extends List {
     _cartInstance = null
-    _pageCounter = 1
 
-    constructor() {
+    constructor(CartInstance) {
         super()
+        this._cartInstance = CartInstance
+
         let goodsPromise = this.fetchGoods()
         goodsPromise.then(() => {
             this.render()
@@ -54,9 +55,12 @@ class ProductList extends List {
             })
             .then(data => {
                 console.log(data)
-                this.items = data.data.map(cur => {
-                    return new GoodItem(cur)
-                })
+                // this.items = data.data.map(cur => {
+                //     return new GoodItem(cur)
+                // })
+                this.items.push(...data.data.map(cur => {
+                    return new GoodItem(cur, this._cartInstance)
+                }))
             })
             .catch(e => {
                 console.log(e)
@@ -92,8 +96,9 @@ class CartList extends List {
             cartList.classList.toggle('shown')
         })
         cart.appendChild(cartButton.getTemplate())
+        cartButton.className = 'cart-button'
 
-        const cartRender = document.querySelector('cart')
+        const cartRender = document.querySelector('.header')
         if (cartRender) {
             cartRender.appendChild(cart)
         }
@@ -102,15 +107,15 @@ class CartList extends List {
     }
 
     render() {
-        const cartRender = document.querySelector('cart-list')
-        if (cartRender) {
-            cartRender.innerHTML = ''
+        const cartListRender = document.querySelector('.cart-list')
+        if (cartListRender) {
+            cartListRender.innerHTML = ''
             if (this.items.length) {
                 this.items.forEach(good => {
-                    good.render(placeToRender)
+                    good.render(cartListRender)
                 })
             } else {
-                placeToRender.innerHTML = 'Нет товаров в корзине!'
+                cartListRender.innerHTML = 'Нет товаров в корзине!'
             }
         }
     }
@@ -160,12 +165,12 @@ class GoodItemInCart extends GoodItem {
         super(props)
     }
 
-    render(goodInCartRender) {
-        if (goodInCartRender) {
-            const goodInCart = document.createElement('div')
-            goodInCart.classList.add('cart-good')
-            goodInCart.innerHTML = `${this.name} = ${this.price} x ${this.counter}`
-            goodInCartRender.appendChild(goodInCart)
+    render(goodsInCartRender) {
+        if (goodsInCartRender) {
+            const goodsInCart = document.createElement('div')
+            goodsInCart.classList.add('cart-good')
+            goodsInCart.innerHTML = `${this.name} = ${this.price} x ${this.counter}`
+            goodsInCartRender.appendChild(goodsInCart)
         }
     }
 }

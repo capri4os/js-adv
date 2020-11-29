@@ -11,6 +11,12 @@ body {
     margin: 0 auto;
 }
 
+.header {
+    /* display: flex; */
+    /* justify-content: space-around; */
+}
+   
+
 .main-header {
     font-size: 36px;
     font-style: italic;
@@ -45,16 +51,6 @@ body {
     text-align: center;
 }
 
-.cart-heading {
-    font-size: 24px;
-    padding-top: 20px;
-}
-
-.cart {
-    margin-top: 30px;
-}
-
 .btn {
     padding: 2px;
-    
 }
