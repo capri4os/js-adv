@@ -13,9 +13,9 @@ class goodsList {
     fetchGoods() {
         return [
             { name: 'Юбка', price: 25 },
-            { name: 'Костюм', price: 25 },
-            { name: 'Жакет', price: 25 },
-            { name: 'Платье', price: 25 }
+            { name: 'Костюм', price: 45 },
+            { name: 'Жакет', price: 35 },
+            { name: 'Платье', price: 55 }
         ]
     }
 
