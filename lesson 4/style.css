@@ -12,55 +12,13 @@ body {
     padding: 0 50px;
 }
 
-.main-header {
-    font-size: 36px;
-    font-style: italic;
-    padding-top: 50px;
-}
-
-.goods-heading {
-    font-size: 24px;
-    padding-top: 20px;
-}
-
-.goods {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.goods-item {
-    width: 170px;
-    height: 220px;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-}
-
-.goods-item-text {
-    padding-top: 10px;
-}
-
-.goods-item-button {
-    margin: 5px;
-    text-align: center;
-}
-
-.btn {
-    padding: 2px;
-}
-
-.feedback {
-padding-top: 50px;
-margin-bottom: 100px;
-}
-
-.form {
+.form-align {
     display: flex;
     flex-direction: column;
     width: 400px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    padding-top: 50px;
 }
 
 .form-message {
