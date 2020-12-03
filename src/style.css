@@ -9,13 +9,8 @@ body {
     font-family: 'Roboto', sans-serif;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 50px;
 }
-
-.header {
-    /* display: flex; */
-    /* justify-content: space-around; */
-}
-   
 
 .main-header {
     font-size: 36px;
@@ -53,4 +48,43 @@ body {
 
 .btn {
     padding: 2px;
+}
+
+.feedback {
+padding-top: 50px;
+margin-bottom: 100px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.form-message {
+    height: 100px;
+}
+
+.form-heading {
+
+}
+
+.form-text {
+    padding-top: 15px;
+}
+
+.form {
+    margin-top: 5px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.form-submit {
+    margin-top: 15px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
