@@ -1,6 +1,6 @@
-class Button {
-    _text = ''
-    _onClickClb = null
+export default class Button {
+    // _text = ''
+    // _onClickClb = null
 
     constructor(text, clb) {
         this._text = text

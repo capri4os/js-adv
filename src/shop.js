@@ -1,3 +1,5 @@
+import Button from './button'
+
 class List {
     items = []
 
