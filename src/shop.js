@@ -1,4 +1,6 @@
-import Button from './button'
+import Button from './button.js'
+
+import './style.css'
 
 class List {
     items = []
@@ -50,7 +52,7 @@ class ProductList extends List {
     }
 
     fetchGoods() {
-        const result = fetch('http://localhost:3000/database.json')
+        const result = fetch(`/database.json`)//http://localhost:3000/database.jsonnpm
         return result
             .then(res => {
                 return res.json()
@@ -146,10 +148,10 @@ class GoodItem {
                 <img src="https://imgholder.ru/170x140/8493a8/adb9ca&text=ФОТО+ТОВАРА&fz=18" alt="">
                 </div>
                 <div class="goods-item-text">
-                Товар: ${this.name}, 
+                    Товар: ${this.name},
                 <br> Цена: ${this.price}
                 </div>
-                <div class="goods-item-button"></div>
+                    <div class="goods-item-button"></div>
                 `
             itemRender.appendChild(card)
 
