@@ -3,7 +3,7 @@ import Button from './button.js'
 import './style.css'
 
 class List {
-    items = []
+    // items = []
 
     constructor(item = []) {
         this.item = []
@@ -39,7 +39,7 @@ class List {
 }
 
 class ProductList extends List {
-    _cartInstance = null
+    // _cartInstance = null
 
     constructor(CartInstance) {
         super()
@@ -52,7 +52,7 @@ class ProductList extends List {
     }
 
     fetchGoods() {
-        const result = fetch(`/database.json`)//http://localhost:3000/database.jsonnpm
+        const result = fetch(`/database.json`)//http://localhost:3000/database.json
         return result
             .then(res => {
                 return res.json()
@@ -126,10 +126,10 @@ class CartList extends List {
 }
 
 class GoodItem {
-    name = ''
-    price = 0
-    counter = 1
-    _cartInstance = null
+    // name = ''
+    // price = 0
+    // counter = 1
+    // _cartInstance = null
 
     constructor({ name, price }, CartInstance) {
         this.name = name
