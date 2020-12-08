@@ -15,39 +15,43 @@ module.exports = {
     },
     module: {
         rules: [
-
-            // {
-            //     test: /\.js$/,
-            //     use: [
-            //         { loader: 'babel-loader' }
-            //     ]
-            // },
-            // {
-            //     test: /\.css$/,
-            //     use: [
-            //         { loader: 'style-loader' },
-            //         { loader: 'css-loader' },
-            //     ]
-            // },
-            {
-                test: /\.[s]?css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                        }
-                    },
-                    'sass-loader',
-                ]
-            },
             {
                 test: /\.vue$/,
                 use: [
                     { loader: 'vue-loader', }
                 ]
             },
+            {
+                test: /\.js$/,
+                use: [
+                    { loader: 'babel-loader' },
+                ]
+            },
+            // {
+            //     test: /\.[s]?css$/,
+            //     use: [
+            //         'style-loader',
+            //         {
+            //             loader: 'css-loader',
+            //             options: {
+            //                 modules: true,
+            //             }
+            //         },
+            //         'sass-loader',
+            //     ]
+            // },
+            {
+                test: /\.css$/,
+                use: [
+                  'style-loader', // инжектит стили из js модуля в тэги <style></style>
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      modules: true,
+                    }
+                  }, // трансформирует css файл в js модуль
+                ]
+              },
         ]
     },
     plugins: [
