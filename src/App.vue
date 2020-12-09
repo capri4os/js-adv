@@ -1,43 +1,40 @@
 <template>
   <div>
-    <header class="header">
-      Магазин вещей
-      <Cart />
+    <header :class="[$style.header]">
+      <!-- <Cart /> -->
+      <div v-for="id in getItemsInCart" :key="id">{{ id }}</div>
     </header>
-    <div>
-      <h1>Список товаров</h1>
-      <Item
-        v-for="(good, index) in items"
-        :key="index"
-        :name="good.name"
-        :price="good.price"
-      />
+    <div :class="[$style.main]">
+      <h1>Список товаров:</h1>
+      <div :class="[$style.main__list]">
+        <Item v-for="id in getItemsOnPage" :key="id" :id="id" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Item from "./Item";
-import Cart from "./Cart";
-import Button from "./Button";
+import Item from "./Item.vue";
+import { mapGetters, mapActions } from "vuex";
+
+// import Cart from "./Cart";
+// import Button from "./Button";
 
 export default {
   components: {
     Item,
-    Cart,
-    Button,
+    // Cart,
+    // Button,
   },
 
   data() {
     return {
-      items: [
-        { name: "title1", price: 1 },
-        { name: "title2", price: 2 },
-        { name: "title3", price: 3 },
-        { name: "title4", price: 4 },
-        { name: "title5", price: 5 },
-      ],
+      items: [],
     };
+  },
+  methods: {},
+  computed: {
+    ...mapGetters("goods", ["getItemsOnPage", "getItemsInCart"]),
   },
 };
 </script>
