@@ -1,13 +1,18 @@
 <template>
-  <div :class="[$style.name]">{{ currentItem.name }}</div>
-  <div :class="[$style.price]">{{ currentItem.price }}</div>
-  <button @click="onBuyClick">Купить</button>
+  <div :class="[$style.wrapper]">
+    <div :class="[$style.name]">{{ currentItem.name }}</div>
+    <div :class="[$style.price]">{{ currentItem.price }}</div>
+    <Button @mySuperEvent="onBuyClick">Купить</Button>
+  </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-
+import Button from "./Button.vue";
 export default {
+  components: {
+    Button,
+  },
   props: {
     id: String,
   },
@@ -27,11 +32,15 @@ export default {
 </script>
 
 <style module lang="scss">
-name {
-  color: black;
+.wrapper {
+  background: #eeeeee;
+  margin: 10px;
+  min-width: 200px;
+  padding: 20px;
 }
-
-price {
+.name,
+.price {
   color: black;
+  padding: 4px;
 }
 </style>
